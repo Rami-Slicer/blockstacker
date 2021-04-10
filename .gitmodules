@@ -1,0 +1,9 @@
+# [submodule "nbt-cpp"]
+# 	path = nbt-cpp
+# 	url = https://github.com/handtruth/nbt-cpp.git
+[submodule "libnbtplusplus"]
+	path = libnbtplusplus
+	url = https://github.com/ljfa-ag/libnbtplusplus.git
+[submodule "mc2obj"]
+	path = mc2obj
+	url = git@github.com:Rami-Slicer/mc2obj.git
