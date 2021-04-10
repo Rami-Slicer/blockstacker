@@ -17,7 +17,7 @@ int main(int, char**) {
     // const mc::Block glowstone = new mc::Block("glowstone");
     const std::shared_ptr<mc::Block const> p(new mc::Block("glowstone"));
 
-    chunk->setBlockAt(1,255,1, p);
+    
 
     // std::ifstream f("../c.0.0.nbt", std::ifstream::binary);
     
