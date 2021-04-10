@@ -7,3 +7,6 @@
 [submodule "mc2obj"]
 	path = mc2obj
 	url = git@github.com:Rami-Slicer/mc2obj.git
+[submodule "blockstacker"]
+	path = blockstacker
+	url = git@github.com:Rami-Slicer/blockstacker.git

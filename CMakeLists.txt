@@ -16,8 +16,9 @@ add_subdirectory(libnbtplusplus/)
 
 
 include_directories(include/)
+include_directories(/usr/include/python3.9/)
 
-link_libraries(z)
+link_libraries(z python3.9)
 
 # find_package(Boost REQUIRED)
 
