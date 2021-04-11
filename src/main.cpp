@@ -4,7 +4,8 @@
 // #include <nbt++/io/stream_reader.h>
 // #include <string>
 #include <minecraft-file.hpp>
-#include <memory>
+
+#include <voxelite.hpp>
 
 const char * PYTHONPATH = "../";
 
@@ -32,8 +33,11 @@ int main(int, char**) {
     std::cout << region->chunkExists(1, 2) << std::endl;
     std::shared_ptr<mc::Chunk> chunk = region->chunkAt(1, 2);
 
-    
+    init();
 
+    World * world = getWorld();
+
+    
     
 
     // std::ifstream f("../c.0.0.nbt", std::ifstream::binary);

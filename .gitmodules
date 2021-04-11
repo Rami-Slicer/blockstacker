@@ -10,3 +10,6 @@
 [submodule "blockstacker"]
 	path = blockstacker
 	url = git@github.com:Rami-Slicer/blockstacker.git
+[submodule "voxelite"]
+	path = voxelite
+	url = git@github.com:Rami-Slicer/voxelite.git

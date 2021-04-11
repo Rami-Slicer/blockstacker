@@ -5,6 +5,7 @@ set(
     blockstacker_SRC
     ${blockstacker_SRC}
     src/main.cpp
+    src/voxelite.cpp
     # src/archive.cpp
 
     PARENT_SCOPE

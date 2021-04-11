@@ -12,10 +12,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src/)
 add_subdirectory(libnbtplusplus/)
+add_subdirectory(voxelite/)
 
 
 
 include_directories(include/)
+include_directories(voxelite/include/)
 include_directories(/usr/include/python3.9/)
 
 link_libraries(z python3.9)
@@ -25,6 +27,7 @@ link_libraries(z python3.9)
 
 add_executable(blockstacker ${blockstacker_SRC})
 target_link_libraries(blockstacker nbt++)
+target_link_libraries(blockstacker voxelite)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
