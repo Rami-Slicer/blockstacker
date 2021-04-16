@@ -20,7 +20,7 @@ const int WORLD_SIZE = 8;
 
 int window_width, window_height;
 
-World world;
+World * worldptr;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -106,7 +106,7 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
 }
 
 World * getWorld() {
-    return &world;
+    return worldptr;
 }
 
 int init()
@@ -169,7 +169,8 @@ int init()
     VoxelPalette palette = VoxelPalette();
     
 
-    world = World(16, &palette);
+    World world = World(16, &palette);
+    worldptr = &world;
 
     
     // VoxelChunk voxels = VoxelChunk(CHUNK_SIZE, palette);

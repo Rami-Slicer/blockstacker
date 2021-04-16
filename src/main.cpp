@@ -6,38 +6,32 @@
 #include <minecraft-file.hpp>
 
 #include <voxelite.hpp>
+#include <convert.hpp>
 
-const char * PYTHONPATH = "../";
 
-#define PY_SSIZE_T_CLEAN
-#include <Python.h>
+
+
 
 // #include <nbtpp/nbt.hpp>
 
-int main(int, char**) {
-    setenv("PYTHONPATH", PYTHONPATH, 1);
-
-    PyObject *pName, *pModule, *pDict, *pFunc, *pValue, *presult;
-
+int main(int argc, char *argv[]) {
     namespace mc = mcfile;
-    Py_Initialize();
-
-    PyObject* module = PyImport_ImportModule("mc2obj.mc2obj");
-    PyObject* convertFunc = PyObject_GetAttrString(module, "convert");
-
-    PyObject* convertResult = PyObject_CallFunction(convertFunc, "minecraft/", "minecraft:redstone_torch[lit=true]", "blockCache/");
-    
-    
 
     std::shared_ptr<mc::Region> region = mc::Region::MakeRegion("../r.0.0.mca");
-    std::cout << region->chunkExists(1, 2) << std::endl;
+    // std::cout << region->chunkExists(1, 2) << std::endl;
     std::shared_ptr<mc::Chunk> chunk = region->chunkAt(1, 2);
 
     init();
-
+    
     World * world = getWorld();
+    std::string pack_path = "../minecraft/";
+    std::string id = "minecraft:redstone_torch[lit=true]";
+    std::string out_path = "../blockCache/";
 
     
+
+    convert(pack_path, id, out_path);
+
     
 
     // std::ifstream f("../c.0.0.nbt", std::ifstream::binary);
@@ -46,7 +40,7 @@ int main(int, char**) {
     
     // n.debug();
 
-    Py_Finalize();
+    
     
     return 0;
 }

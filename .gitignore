@@ -1,2 +1,6 @@
 /target
 build/
+blockCache/
+logs/
+
+/__pycache__
